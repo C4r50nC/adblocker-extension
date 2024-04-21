@@ -1,23 +1,18 @@
 {
-    "manifest_version": 3,
-    "name": "React Extension",
-    "description": "Chrome extension in React",
+    "manifest_version": 2,
+    "name": "AdBlock Extension",
+    "description": "AdBlock extension in Typescript",
     "version": "1.0.0",
     "icons": {
         "16": "icon.png",
         "48": "icon.png",
         "128": "icon.png"
     },
-    "action": {
-        "default_popup": "popup.html",
-        "default_title": "React Extension",
-        "default_icon": {
-            "16": "icon.png",
-            "24": "icon.png",
-            "32": "icon.png"
-        }
-    },
-    "options_page": "options.html",
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls"
+    ],
     "background": {
         "service_worker": "background.js"
     },

@@ -1,7 +1,7 @@
 {
-  "name": "react-extension",
+  "name": "adblock-extension",
   "version": "1.0.0",
-  "description": "Chrome extension template in React",
+  "description": "AdBlock extension in Typescript",
   "main": "index.js",
   "scripts": {
     "start": "webpack --watch --progress --config webpack.dev.js",
