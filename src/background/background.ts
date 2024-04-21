@@ -1,5 +1,12 @@
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  console.log(msg);
-  console.log(sender);
-  sendResponse("From the background");
-});
+chrome.webRequest.onBeforeRequest.addListener(
+  (details) => {
+    console.log(details);
+    return {
+      cancel: true,
+    };
+  },
+  {
+    urls: ["*://*.googleadservices.com/*", "*://*.tpc.googlesyndication.com/*"],
+  },
+  ["blocking"]
+);
