@@ -1,12 +1,16 @@
 chrome.webRequest.onBeforeRequest.addListener(
   (details) => {
-    console.log(details);
-    return {
-      cancel: true,
-    };
+    const url = details.url;
+    const filters = ["googleadservices", "googlesyndication", "g.doubleclick"];
+    for (const filter of filters) {
+      if (url.indexOf(filter) !== -1) {
+        return { cancel: true };
+      }
+    }
+    return { cancel: false };
   },
   {
-    urls: ["*://*.googleadservices.com/*", "*://*.tpc.googlesyndication.com/*"],
+    urls: ["<all_urls>"],
   },
   ["blocking"]
 );

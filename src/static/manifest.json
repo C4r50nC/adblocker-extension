@@ -11,9 +11,7 @@
     "permissions": [
         "webRequest",
         "webRequestBlocking",
-        "<all_urls>",
-        "*://*.googleadservices.com/*",
-        "*://*.tpc.googlesyndication.com/*"
+        "<all_urls>"
     ],
     "background": {
         "service_worker": "background.js"
